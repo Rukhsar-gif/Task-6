@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="A responsive BMI calculator built using HTML5, CSS3 and JavaScript."
+    >
+
+    <meta name="author" content="Rukhsar Hussain">
+
+    <title>BMI Calculator</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="page">
+
+        <section class="calculator-container" aria-labelledby="page-title">
+
+            <!-- Header -->
+            <header class="header">
+
+                <h1 id="page-title">
+                    BMI Calculator
+                </h1>
+
+                <p class="description">
+                    Enter your height and weight to calculate your
+                    Body Mass Index and category.
+                </p>
+
+            </header>
+
+
+            <!-- Calculator -->
+            <section
+                class="calculator-card"
+                aria-label="BMI calculator"
+            >
+
+                <!-- Height -->
+                <div class="input-group">
+
+                    <label for="height">
+                        Height
+                        <span>cm</span>
+                    </label>
+
+                    <input
+                        type="number"
+                        id="height"
+                        placeholder="Enter height in cm"
+                        min="1"
+                        step="any"
+                        autocomplete="off"
+                    >
+
+                </div>
+
+
+                <!-- Weight -->
+                <div class="input-group">
+
+                    <label for="weight">
+                        Weight
+                        <span>kg</span>
+                    </label>
+
+                    <input
+                        type="number"
+                        id="weight"
+                        placeholder="Enter weight in kg"
+                        min="1"
+                        step="any"
+                        autocomplete="off"
+                    >
+
+                </div>
+
+
+                <!-- Buttons -->
+                <div class="button-group">
+
+                    <button
+                        type="button"
+                        class="calculate-button"
+                        id="calculateButton"
+                    >
+                        Calculate BMI
+                    </button>
+
+                    <button
+                        type="button"
+                        class="reset-button"
+                        id="resetButton"
+                    >
+                        Reset
+                    </button>
+
+                </div>
+
+
+                <!-- Error message -->
+                <p
+                    class="error-message"
+                    id="errorMessage"
+                    aria-live="polite"
+                ></p>
+
+
+                <!-- Result -->
+                <section
+                    class="result-card"
+                    id="resultCard"
+                    aria-live="polite"
+                >
+
+                    <p class="result-label">
+                        YOUR BMI
+                    </p>
+
+                    <div
+                        class="bmi-value"
+                        id="bmiValue"
+                    >
+                        --
+                    </div>
+
+                    <p
+                        class="bmi-category"
+                        id="bmiCategory"
+                    >
+                        Enter your details to calculate BMI.
+                    </p>
+
+                </section>
+
+            </section>
+
+
+            <!-- BMI Categories -->
+            <section
+                class="category-section"
+                aria-labelledby="category-title"
+            >
+
+                <h2 id="category-title">
+                    BMI Categories
+                </h2>
+
+                <div class="category-grid">
+
+                    <article class="category-card">
+
+                        <span>Below 18.5</span>
+
+                        <h3>
+                            Underweight
+                        </h3>
+
+                    </article>
+
+
+                    <article class="category-card">
+
+                        <span>18.5 – 24.9</span>
+
+                        <h3>
+                            Normal Weight
+                        </h3>
+
+                    </article>
+
+
+                    <article class="category-card">
+
+                        <span>25.0 – 29.9</span>
+
+                        <h3>
+                            Overweight
+                        </h3>
+
+                    </article>
+
+
+                    <article class="category-card">
+
+                        <span>30.0 and above</span>
+
+                        <h3>
+                            Obesity
+                        </h3>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- Formula -->
+            <section class="formula-section">
+
+                <h2>
+                    BMI Formula
+                </h2>
+
+                <p>
+                    BMI = Weight (kg) ÷ Height² (m²)
+                </p>
+
+            </section>
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

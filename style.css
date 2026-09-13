@@ -1,0 +1,534 @@
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   GLOBAL
+========================================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0d1b2a,
+            #173b5c,
+            #28627a
+        );
+
+    color: #172033;
+}
+
+
+/* =========================================
+   PAGE
+========================================= */
+
+.page {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px 20px;
+}
+
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.calculator-container {
+    width: min(900px, 100%);
+
+    background: #f7f9fc;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 30px 70px rgba(0, 0, 0, 0.3);
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.header {
+    padding: 55px 45px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #112947,
+            #1c5272
+        );
+
+    color: #ffffff;
+}
+
+.task-label {
+    color: #9fd7fa;
+
+    font-size: 0.75rem;
+
+    font-weight: 700;
+
+    letter-spacing: 2.5px;
+
+    margin-bottom: 15px;
+}
+
+.header h1 {
+    font-size: clamp(2.7rem, 7vw, 4.8rem);
+
+    line-height: 1.05;
+
+    letter-spacing: -2px;
+
+    margin-bottom: 17px;
+}
+
+.description {
+    max-width: 620px;
+
+    margin: auto;
+
+    color: #c8d9e7;
+
+    font-size: 1rem;
+}
+
+
+/* =========================================
+   CALCULATOR CARD
+========================================= */
+
+.calculator-card {
+    width: min(700px, 88%);
+
+    margin: 50px auto;
+
+    padding: 35px;
+
+    background: #ffffff;
+
+    border: 1px solid #dfe6ed;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 15px 35px rgba(30, 50, 70, 0.08);
+}
+
+
+/* =========================================
+   INPUT GROUP
+========================================= */
+
+.input-group {
+    margin-bottom: 22px;
+}
+
+.input-group label {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 8px;
+
+    color: #1a3654;
+
+    font-weight: 700;
+}
+
+.input-group label span {
+    color: #5b7891;
+
+    font-size: 0.85rem;
+}
+
+.input-group input {
+    width: 100%;
+
+    padding: 15px 16px;
+
+    border: 1px solid #cbd7e2;
+
+    border-radius: 7px;
+
+    background: #f8fafc;
+
+    color: #18283a;
+
+    font-size: 1rem;
+
+    outline: none;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.input-group input:focus {
+    border-color: #3275a3;
+
+    box-shadow:
+        0 0 0 3px rgba(50, 117, 163, 0.12);
+}
+
+.input-group input::placeholder {
+    color: #98a5b3;
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.button-group {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 12px;
+
+    margin-top: 28px;
+}
+
+.calculate-button,
+.reset-button {
+    padding: 13px 20px;
+
+    border-radius: 6px;
+
+    font-size: 0.95rem;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        background-color 0.25s ease;
+}
+
+.calculate-button {
+    border: none;
+
+    background: #1c5272;
+
+    color: #ffffff;
+}
+
+.calculate-button:hover {
+    background: #143e58;
+
+    transform: translateY(-2px);
+}
+
+.reset-button {
+    border: 1px solid #cbd7e2;
+
+    background: #ffffff;
+
+    color: #1c5272;
+}
+
+.reset-button:hover {
+    background: #eef4f8;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   ERROR MESSAGE
+========================================= */
+
+.error-message {
+    min-height: 25px;
+
+    margin-top: 15px;
+
+    color: #c0392b;
+
+    font-size: 0.88rem;
+
+    font-weight: 600;
+
+    text-align: center;
+}
+
+
+/* =========================================
+   RESULT
+========================================= */
+
+.result-card {
+    margin-top: 22px;
+
+    padding: 30px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eef5f9,
+            #f8fafc
+        );
+
+    border: 1px solid #dce6ee;
+
+    border-radius: 10px;
+}
+
+.result-label {
+    color: #55758d;
+
+    font-size: 0.75rem;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 8px;
+}
+
+.bmi-value {
+    color: #173b5c;
+
+    font-size: 4rem;
+
+    line-height: 1;
+
+    font-weight: 800;
+}
+
+.bmi-category {
+    margin-top: 12px;
+
+    color: #41657f;
+
+    font-size: 1.05rem;
+
+    font-weight: 700;
+}
+
+
+/* =========================================
+   CATEGORY SECTION
+========================================= */
+
+.category-section {
+    padding: 0 45px 45px;
+}
+
+.category-section h2,
+.formula-section h2 {
+    color: #17304e;
+
+    font-size: 1.7rem;
+
+    text-align: center;
+
+    margin-bottom: 24px;
+}
+
+.category-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 14px;
+}
+
+.category-card {
+    padding: 20px;
+
+    text-align: center;
+
+    background: #eef4f8;
+
+    border-top: 4px solid #3275a3;
+
+    border-radius: 7px;
+}
+
+.category-card span {
+    display: block;
+
+    color: #60798b;
+
+    font-size: 0.78rem;
+
+    font-weight: 700;
+
+    margin-bottom: 7px;
+}
+
+.category-card h3 {
+    color: #1c3856;
+
+    font-size: 0.96rem;
+}
+
+
+/* =========================================
+   FORMULA
+========================================= */
+
+.formula-section {
+    padding: 0 45px 50px;
+
+    text-align: center;
+}
+
+.formula-section p {
+    display: inline-block;
+
+    padding: 14px 22px;
+
+    background: #173b5c;
+
+    color: #ffffff;
+
+    border-radius: 6px;
+
+    font-size: 1rem;
+
+    font-weight: 700;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.footer {
+    padding: 25px;
+
+    background: #0c1d30;
+
+    color: #9cafc0;
+
+    text-align: center;
+
+    font-size: 0.78rem;
+}
+
+.footer p + p {
+    margin-top: 5px;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 750px) {
+
+    .header {
+        padding: 45px 30px;
+    }
+
+    .calculator-card {
+        padding: 28px;
+    }
+
+    .category-section,
+    .formula-section {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .category-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+    .page {
+        padding: 12px;
+    }
+
+    .calculator-container {
+        border-radius: 12px;
+    }
+
+    .header {
+        padding: 40px 20px;
+    }
+
+    .task-label {
+        font-size: 0.65rem;
+
+        letter-spacing: 1.8px;
+    }
+
+    .header h1 {
+        font-size: 2.5rem;
+    }
+
+    .description {
+        font-size: 0.9rem;
+    }
+
+    .calculator-card {
+        width: 92%;
+
+        margin: 35px auto;
+
+        padding: 22px;
+    }
+
+    .button-group {
+        grid-template-columns: 1fr;
+    }
+
+    .category-section,
+    .formula-section {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .category-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .bmi-value {
+        font-size: 3.2rem;
+    }
+}
